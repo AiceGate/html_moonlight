@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <title>Parallax Scrolling</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="img/stars.png" id="stars">
+        <img src="img/moon.png" id="moon">
+        <img src="img/mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" class="btn">Explore</a>
+        <img src="img/mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, voluptate. Perspiciatis, nesciunt alias et repudiandae odio voluptates voluptatibus voluptas, quia odit similique accusamus maiores, cupiditate laboriosam! Minima inventore odio quae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt perferendis enim inventore, nisi quasi quo at voluptatem necessitatibus, nulla ut sint odio, ducimus blanditiis modi error praesentium est ea exercitationem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio minus repellat, odit recusandae quidem ad nobis beatae optio ducimus animi, esse nam maiores nisi. Repellat necessitatibus fuga aliquid quas et! <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, voluptate. Perspiciatis, nesciunt alias et repudiandae odio voluptates voluptatibus voluptas, quia odit similique accusamus maiores, cupiditate laboriosam! Minima inventore odio quae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt perferendis enim inventore, nisi quasi quo at voluptatem necessitatibus, nulla ut sint odio, ducimus blanditiis modi error praesentium est ea exercitationem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio minus repellat, odit recusandae quidem ad nobis beatae optio ducimus animi, esse nam maiores nisi. Repellat necessitatibus fuga aliquid quas et!  <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, voluptate. Perspiciatis, nesciunt alias et repudiandae odio voluptates voluptatibus voluptas, quia odit similique accusamus maiores, cupiditate laboriosam! Minima inventore odio quae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt perferendis enim inventore, nisi quasi quo at voluptatem necessitatibus, nulla ut sint odio, ducimus blanditiis modi error praesentium est ea exercitationem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio minus repellat, odit recusandae quidem ad nobis beatae optio ducimus animi, esse nam maiores nisi. Repellat necessitatibus fuga aliquid quas et!</p>
+    </div>
+    
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+        
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
